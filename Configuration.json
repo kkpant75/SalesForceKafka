@@ -1,0 +1,156 @@
+{
+	"DATABASE": {
+		"MSSQL": [
+			{
+				"SERVER": "mssqlldb",
+				"NAME": "world",
+				"SCHEMA": "DBO",
+				"TABLE_PREFIX": "Snowflake_Table_",
+				"DRIVER": "{SQL Server}",
+				"AUTH_TYPE": "WINLOGIN",
+				"USERNAME": "Domain\\uid",
+				"PASSWORD": "VDDPassword"
+			}
+		],
+		"MYSQL": [
+			{
+				"SERVER": "127.0.0.1",
+				"NAME": "world",
+				"SCHEMA": "",
+				"TABLE_PREFIX": "City",
+				"DRIVER": "",
+				"AUTH_TYPE": "WINLOGIN",
+				"USERNAME": "root",
+				"PASSWORD": "mysql"
+			}
+		],
+		"SNOWFLAKE": [
+			{
+				"WAREHOUSE": "PC_ALTERYX_WH",
+				"DSN": "SnowFlake32",
+				"CONNECTION_URI": "pua75685.snowflakecomputing.com",
+				"NAME": "SNOWFLAKE_SAMPLE_DATA",
+				"SCHEMA": "TPCDS_SF10TCL",
+				"TABLE_NAME": "CUSTOMER",
+				"STAGE_NAME": "PY_MYSQL_STAGE",
+				"FILE_FORMAT_NAME": "PYCSV_FORMAT",
+				"FILE_FORMAT_TYPE": "CSV",
+				"FILE_FIELD_DELIMITER": ",",
+				"SNOWSQL_CMD": "C:\\\"Program Files\"\\\"Snowflake SnowSQL\"\\snowsql",
+				"TABLE_PREFIX": "Snowflake_Table_",
+				"DRIVER": "SnowflakeDSIIDriver",
+				"USERNAME": "KKPANT75",
+				"PASSWORD": "Snowflake@123"
+			},
+			{
+				"WAREHOUSE": "COMPUTE_WH",
+				"DSN": "SnowFlake32",
+				"CONNECTION_URI": "mpa43641.snowflakecomputing.com",
+				"NAME": "SNOWDBKK",
+				"SCHEMA": "SNOWSCHEMAKK",
+				"TABLE_NAME": "SNOWTABLEKK",
+				"STAGE_NAME": "PY_MYSQL_STAGE",
+				"FILE_FORMAT_NAME": "PYCSV_FORMAT",
+				"FILE_FORMAT_TYPE": "CSV",
+				"FILE_FIELD_DELIMITER": ",",
+				"SNOWSQL_CMD": "C:\\\"Program Files\"\\\"Snowflake SnowSQL\"\\snowsql",
+				"TABLE_PREFIX": "SnowTableKK_",
+				"DRIVER": "SnowflakeDSIIDriver",
+				"USERNAME": "KKPANT75",
+				"PASSWORD": "Snowflake@123"
+			}
+		]
+	},
+	"CLOUD_PLATFORM": "AWS",
+	"AWS": {
+		"AWS_REGION": "us-west-2",
+		"SNS_NAME_OR_ARN": "",
+		"SQS_NAME_OR_ARN": "",
+		"S3_BUCKET_NAME": "",
+		"S3_OBJECT_NAME": "",
+		"AWS_SNS_ARN": ""
+	},
+	"WAREHOUSE_PLATFORM": "SNOWFLAKE",
+	"STREAMING_SERVICE": "KAFKA",
+	"KAFKA": [
+		{
+			"TOPIC": "snowtopic",
+			"SOURCE_SYSTEM": "MYSQL",
+			"TARGET_SYSTEM": "SNOWFLAKE",
+			"BOOTSTRAP_SERVERS": "['localhost:9092']"
+		}
+	],
+	"SFTP": [
+		{
+			"SERVER": "192.168.1.116",
+			"PUT_PATH": "D:\\SnowFlake-UR\\SNOWFLAKE\\Processed\\",
+			"GET_PATH": "D:\\SnowFlake-UR\\SNOWFLAKE\\",
+			"USERNAME": "ftpuser",
+			"PASSWORD": "password",
+			"FILE_PATTERN": ".*\\.csv"
+		}
+	],
+	"FTP": [
+		{
+			"SERVER": "192.168.1.16",
+			"PUT_PATH": "/Processed/",
+			"GET_PATH": "/",
+			"USERNAME": "ftpuser",
+			"PASSWORD": "password",
+			"FILE_PATTERN": "^[aA0-zZ1]*\\.csv"
+		}
+	],
+	"PROCESS_LOG": {
+		"LOG_FILE_RETENTION_PERIOD": 10,
+		"LOG_FILE_MAX_FILE_SIZE": 50000000,
+		"PRINT_LOG_MESSGAE_ON_CONSOLE": "YES",
+		"ENABLE_FILE_LOGGING": "YES",
+		"LOG_LEVEL": "WARNING",
+		"LOG_FILE_NAME": "LogForSalesForce_"
+	},
+	"SYSTEM_PARAMETERS": {
+		"LOCAL_FILE_PATH": "D:\\SalesForce-UR\\",
+		"CLEANUP_HISTORICAL_FILES": "NO",
+		"TIMEZONE": "Etc/UTC",
+		"CREDENTIAL": "SECRET_MANAGER_NO",
+		"ENTITY_NAME": "SNOWFLAKE"
+	},
+	"SEARCH_STRING_FOR_INDEX": {
+		"SNOWFLAKE1": "mpa43641",
+		"MSSQL1": "mssqlldb",
+		"MYSQL1": "127.1.1.0",
+		"KAFKA_TOPIC_SNOWDB": "snowtopic",
+		"FTP_LOCAL": "192.168.1.16"
+	},
+	"WEBAPI": {
+		"EnableDataSerachWithLIKE": "yes",
+		"WebPort": "800",
+		"EnableDataSearchAcrossAttributes": "yes",
+		"WebContentDisplayType": "TABLE",
+		"EnableUserToControlSearch": "Yes",
+		"EnableUserFullAccessToSearch": "yes"
+	},
+	"SALESFORCE": {
+		"AUTHENTICATION": {
+			"AuthURL": "https://login.salesforce.com/services/oauth2/token",
+			"UserName": "kamleshp",
+			"Password": "pass",
+			"GrantType": "password",
+			"ClientID": "",
+			"ClientSecret": ""
+		},
+		"GETAPI": {
+			"GetAccountDetail": {
+				"EndPointURL": "https://ap5.salesforce.com/services/data/v42.0/query/?q=",
+				"QueryOrHeaderParameters": "SELECT+Name,Type+FROM+Account"
+			}
+		},
+		"POSTAPI": {
+			"PostAccountDetail": {
+				"EndPointURL": "",
+				"HeaderParameters": "",
+				"BodyParameters": ""
+			}
+		}
+	}
+}
